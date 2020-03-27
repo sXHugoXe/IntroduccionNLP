@@ -1,0 +1,3 @@
+"0","NoticiasDF$noticiaLimpia = removePunctuation(NoticiasDF$noticia)"
+"0","NoticiasDF$noticiaLimpia = removeNumbers(NoticiasDF$noticiaLimpia)"
+"0","NoticiasDF$noticiaLimpia = tolower(NoticiasDF$noticiaLimpia)"

@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<style>body{background-color:white;}</style>
+<script src="lib/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="lib/bootstrap-3.3.5/css/simplex.min.css" rel="stylesheet" />
+<script src="lib/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="lib/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="lib/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="lib/kePrint-0.0.1/kePrint.js"></script>
+
+</head>
+<body>
+<table style="color: black; margin-left: auto; margin-right: auto;" class="table table-striped table-condensed table-bordered">
+<caption>Noticias según su conteo de palabras</caption>
+ <thead>
+  <tr>
+   <th style="text-align:center;"> Diario </th>
+   <th style="text-align:center;"> Fecha </th>
+   <th style="text-align:center;"> titular </th>
+   <th style="text-align:center;"> NumeroPalabras </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:center;"> Primicias </td>
+   <td style="text-align:center;"> 2020-03-23T05:06:26Z </td>
+   <td style="text-align:center;"> En un mar de decisiones nacionales y locales ¿dónde queda el COE? </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 100.00%">1576</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> expreso.ec </td>
+   <td style="text-align:center;"> 2020-03-25T04:07:47Z </td>
+   <td style="text-align:center;"> Ecuador, el segundo país de Sudamérica con más casos de COVID-19 </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 30.90%">487</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> El Universo </td>
+   <td style="text-align:center;"> 2020-03-24T05:02:05Z </td>
+   <td style="text-align:center;"> 10 de los 18 fallecidos residían en populosas parroquias guayaquileñas </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 30.84%">486</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> El Universo </td>
+   <td style="text-align:center;"> 2020-03-24T05:00:00Z </td>
+   <td style="text-align:center;"> Fuerzas Armadas tienen todo el poder para ejercer control </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 27.73%">437</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> El Telégrafo </td>
+   <td style="text-align:center;"> 2020-03-23T04:04:04Z </td>
+   <td style="text-align:center;"> Moreno ordena eliminar gastos de proceso electoral y destinarlos a la emergencia sanitaria </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 25.89%">408</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> expreso.ec </td>
+   <td style="text-align:center;"> 2020-03-19T14:50:47Z </td>
+   <td style="text-align:center;"> Una sanidad que llega débil al coronavirus </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 25.82%">407</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> expreso.ec </td>
+   <td style="text-align:center;"> 2020-03-24T20:00:31Z </td>
+   <td style="text-align:center;"> CUARENTENA, DÍA 7: Querido diario: ayer caí en un agujero </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 23.67%">373</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> El Comercio (Ecuador) </td>
+   <td style="text-align:center;"> 2020-03-22T03:50:00Z </td>
+   <td style="text-align:center;"> Jorge Yunda convocará al Concejo para trazar medidas de reactivación económica </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 22.02%">347</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> El Comercio (Ecuador) </td>
+   <td style="text-align:center;"> 2020-03-26T05:00:00Z </td>
+   <td style="text-align:center;"> Mañana movida en Quito, antes del toque de queda </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 21.83%">344</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> expreso.ec </td>
+   <td style="text-align:center;"> 2020-03-20T12:00:00Z </td>
+   <td style="text-align:center;"> 5 noticias para revisar hoy: La OEA elige a su secretario pese al coronavirus, Perú repatría a 622 turistas brasileños, y más </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 21.70%">342</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> expreso.ec </td>
+   <td style="text-align:center;"> 2020-03-23T04:30:00Z </td>
+   <td style="text-align:center;"> Las pruebas para coronavirus: el punto de fuga de los contagios </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 19.80%">312</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> El Comercio (Ecuador) </td>
+   <td style="text-align:center;"> 2020-03-20T03:04:00Z </td>
+   <td style="text-align:center;"> Quito instalará controles sanitarios en accesos a la ciudad por covid-19 </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 19.54%">308</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> La Hora (Ecuador) </td>
+   <td style="text-align:center;"> 2020-03-24T05:00:39Z </td>
+   <td style="text-align:center;"> ‘Entrar en pánico nos inmoviliza y es contraproducente’ </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 18.85%">297</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> El Telégrafo </td>
+   <td style="text-align:center;"> 2020-03-21T05:10:32Z </td>
+   <td style="text-align:center;"> Noticias del Ecuador y del mundo - Las autoridades locales deben obedecer al COE </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 18.53%">292</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> El Universo </td>
+   <td style="text-align:center;"> 2020-03-21T05:05:05Z </td>
+   <td style="text-align:center;"> Ecuador: 106 casos en 18 horas, récord del COVID-19 en 23 días </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 18.21%">287</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> El Universo </td>
+   <td style="text-align:center;"> 2020-03-24T05:00:00Z </td>
+   <td style="text-align:center;"> Ministro de Salud lo reconoce: faltan reactivos para tests de COVID19 </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 18.08%">285</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> El Telégrafo </td>
+   <td style="text-align:center;"> 2020-03-23T18:24:13Z </td>
+   <td style="text-align:center;"> Tres alcaldes de Guayas dan positivo en coronavirus </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 18.02%">284</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> La Hora (Ecuador) </td>
+   <td style="text-align:center;"> 2020-03-24T05:00:26Z </td>
+   <td style="text-align:center;"> ‘El pánico nos inmoviliza y es contraproducente’ </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 17.51%">276</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> expreso.ec </td>
+   <td style="text-align:center;"> 2020-03-22T04:00:00Z </td>
+   <td style="text-align:center;"> El coronavirus contagia algo de rebeldía política </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 17.45%">275</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> El Comercio (Ecuador) </td>
+   <td style="text-align:center;"> 2020-03-20T20:36:00Z </td>
+   <td style="text-align:center;"> ¿Cómo convivir con una persona contagiada de covid-19? </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 17.20%">271</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Diario La Opinión </td>
+   <td style="text-align:center;"> 2020-03-26T02:07:17Z </td>
+   <td style="text-align:center;"> La mesa del Señor está envilecida Se oyen y hasta se leen a menudo, entre los </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 15.10%">238</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> El Comercio (Ecuador) </td>
+   <td style="text-align:center;"> 2020-03-24T19:03:00Z </td>
+   <td style="text-align:center;"> Jorge Yunda dice que el Municipio de Quito está importando pruebas rápidas de detección del covid-19 </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 14.72%">232</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> expreso.ec </td>
+   <td style="text-align:center;"> 2020-03-20T04:06:28Z </td>
+   <td style="text-align:center;"> Caso Iberia: Una decisión que resonó fuera </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 14.02%">221</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Metro Ecuador </td>
+   <td style="text-align:center;"> 2020-03-25T00:24:00Z </td>
+   <td style="text-align:center;"> Municipio de Quito aprueba regreso de niños, embarazadas y adultos mayores al Ecuador </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 13.26%">209</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> El Universo </td>
+   <td style="text-align:center;"> 2020-03-26T05:00:52Z </td>
+   <td style="text-align:center;"> Adultos mayores acuden a los mercados en horario preferencial </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 11.48%">181</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> El Universo </td>
+   <td style="text-align:center;"> 2020-03-20T17:25:45Z </td>
+   <td style="text-align:center;"> Fiscalía General investigará el incidente en el aeopuerto de Guayaquil por 'delito de obstaculización de tareas sanitarias y humanitarias' </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 11.29%">178</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> expreso.ec </td>
+   <td style="text-align:center;"> 2020-03-22T03:34:17Z </td>
+   <td style="text-align:center;"> Coronavirus: Inquietud por el cerco preventivo municipal </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 11.10%">175</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> El Universo </td>
+   <td style="text-align:center;"> 2020-03-22T03:58:45Z </td>
+   <td style="text-align:center;"> Coronavirus en Ecuador: Cynthia Viteri y otros alcaldes de Guayas rechazan aterrizaje de aviones en Guayaquil </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 10.91%">172</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> El Telégrafo </td>
+   <td style="text-align:center;"> 2020-03-23T18:28:00Z </td>
+   <td style="text-align:center;"> Secretario de Seguridad de Quito renuncia por filtración de mapa </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 10.85%">171</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Metro Ecuador </td>
+   <td style="text-align:center;"> 2020-03-20T02:13:00Z </td>
+   <td style="text-align:center;"> María Paula Romo sobre incidente en aeropuerto de Guayaquil: "No es momento de polemizar" </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 10.22%">161</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> expreso.ec </td>
+   <td style="text-align:center;"> 2020-03-26T13:17:06Z </td>
+   <td style="text-align:center;"> Sonnenholzner: "No tenemos cómo saber con exactitud cuántos pudieran estar contagiados" </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 9.96%">157</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> expreso.ec </td>
+   <td style="text-align:center;"> 2020-03-22T03:48:27Z </td>
+   <td style="text-align:center;"> La Corte Constitucional exhorta a los funcionarios a respetar las competencias </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 9.90%">156</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> El Universo </td>
+   <td style="text-align:center;"> 2020-03-23T05:00:00Z </td>
+   <td style="text-align:center;"> 32 cuartos de la antigua maternidad casi listos para recibir a pacientes con coronavirus </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 9.71%">153</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> El Universo </td>
+   <td style="text-align:center;"> 2020-03-24T11:00:00Z </td>
+   <td style="text-align:center;"> Más funcionarios públicos ecuatorianos dan positivo al coronavirus </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 9.64%">152</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> El Universo </td>
+   <td style="text-align:center;"> 2020-03-22T06:00:00Z </td>
+   <td style="text-align:center;"> Siete rutas especiales en Guayaquil para quienes requieran trasladarse a hospitales </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 9.58%">151</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> El Comercio (Ecuador) </td>
+   <td style="text-align:center;"> 2020-03-22T20:03:00Z </td>
+   <td style="text-align:center;"> Estos son los siete puntos estratégicos que se instalaron al ingreso de Quito </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 9.45%">149</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> El Comercio (Ecuador) </td>
+   <td style="text-align:center;"> 2020-03-25T15:31:00Z </td>
+   <td style="text-align:center;"> Municipio de Quito dará soporte para ecuatorianos repatriados, afirma el Alcalde </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 9.14%">144</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Metro Ecuador </td>
+   <td style="text-align:center;"> 2020-03-24T21:04:00Z </td>
+   <td style="text-align:center;"> Quito registra una baja del 40% en el consumo de agua </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 8.88%">140</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Diario La Opinión </td>
+   <td style="text-align:center;"> 2020-03-20T04:27:22Z </td>
+   <td style="text-align:center;"> Alcaldía de Machala entrega insumos a hospital Teófilo Dávila </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 8.57%">135</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Metro Ecuador </td>
+   <td style="text-align:center;"> 2020-03-19T23:16:00Z </td>
+   <td style="text-align:center;"> Quito: personas en situación de calle reciben kits de alimentos </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 8.57%">135</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Metro Ecuador </td>
+   <td style="text-align:center;"> 2020-03-24T23:41:00Z </td>
+   <td style="text-align:center;"> Alcaldesa Cynthia Viteri anunció nuevas medidas en Guayaquil </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 8.57%">135</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> expreso.ec </td>
+   <td style="text-align:center;"> 2020-03-20T01:25:52Z </td>
+   <td style="text-align:center;"> LATAM planea trasladar a turistas de Galápagos hacia Quito y Guayaquil </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 8.44%">133</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> El Universo </td>
+   <td style="text-align:center;"> 2020-03-26T05:00:00Z </td>
+   <td style="text-align:center;"> Listo el protocolo para traer a niños y adultos mayores varados en el exterior </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 8.31%">131</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> expreso.ec </td>
+   <td style="text-align:center;"> 2020-03-25T21:37:18Z </td>
+   <td style="text-align:center;"> Coronavirus: Guayas llegó tarde a la declaratoria de emergencia </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 8.31%">131</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Teleamazonas </td>
+   <td style="text-align:center;"> 2020-03-19T19:42:00Z </td>
+   <td style="text-align:center;"> Lo positivo del coronavirus: El aire de Quito mejoró tras la medida ‘Quédate en casa’ </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 7.61%">120</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> El Universo </td>
+   <td style="text-align:center;"> 2020-03-24T19:01:14Z </td>
+   <td style="text-align:center;"> Cooperativas de Monte Sinaí reciben desde este martes 24 agua potable gratis </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 7.49%">118</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Metro Ecuador </td>
+   <td style="text-align:center;"> 2020-03-22T15:23:00Z </td>
+   <td style="text-align:center;"> ¡Escondido en el clóset! Atrapan a hombre que agredió a un agente municipal </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 7.42%">117</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Metro Ecuador </td>
+   <td style="text-align:center;"> 2020-03-24T22:53:00Z </td>
+   <td style="text-align:center;"> Yunda anunció pruebas rápidas para la detección de Covid-19 en Quito </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 7.42%">117</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Portal Extra </td>
+   <td style="text-align:center;"> 2020-03-19T22:36:00Z </td>
+   <td style="text-align:center;"> Controlan los precios en mercados y supermercados en Quito </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 7.30%">115</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> El Universo </td>
+   <td style="text-align:center;"> 2020-03-23T23:29:57Z </td>
+   <td style="text-align:center;"> Edificio sede de Unasur podría albergar a afectados por coronavirus </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 7.23%">114</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Metro Ecuador </td>
+   <td style="text-align:center;"> 2020-03-19T23:04:00Z </td>
+   <td style="text-align:center;"> Guayaquil: solo pasajeros sentados viajarán en Metrovía </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 7.17%">113</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> El Comercio (Ecuador) </td>
+   <td style="text-align:center;"> 2020-03-22T02:50:00Z </td>
+   <td style="text-align:center;"> 5 autoridades de Guayas señalan al Gobierno, si los casos de covid-19 aumentan por vuelos internacionales </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 6.98%">110</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> El Universo </td>
+   <td style="text-align:center;"> 2020-03-19T23:30:03Z </td>
+   <td style="text-align:center;"> KLM y Air France anuncian viajes hacia Ecuador para repatriar a ciudadanos europeos </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 6.92%">109</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Metro Ecuador </td>
+   <td style="text-align:center;"> 2020-03-20T01:12:00Z </td>
+   <td style="text-align:center;"> Toque de queda en Ecuador será desde las 19:00 a partir del sábado 21 de marzo </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 6.92%">109</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> El Comercio (Ecuador) </td>
+   <td style="text-align:center;"> 2020-03-25T23:24:00Z </td>
+   <td style="text-align:center;"> COE cantonal analiza abrir una edificación para cuarentena de contagiados y repatriados </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 6.79%">107</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> El Universo </td>
+   <td style="text-align:center;"> 2020-03-19T15:32:54Z </td>
+   <td style="text-align:center;"> Alexandra Ocles, sobre decisión de Cynthia Viteri de no permitir ingreso de avión desde España: Es una acción que seguramente tendrá consecuencias legales </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 6.22%">98</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Hoy en Imbabura </td>
+   <td style="text-align:center;"> 2020-03-22T16:22:00Z </td>
+   <td style="text-align:center;"> Cuarto paciente positivo de CoVID-19 en Imbabura, a nivel nacional se llegó a 798 casos </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 6.22%">98</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> La Hora (Ecuador) </td>
+   <td style="text-align:center;"> 2020-03-20T05:06:53Z </td>
+   <td style="text-align:center;"> Personal de sectores estratégicos cuenta con transporte gratuito </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 5.71%">90</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Primicias </td>
+   <td style="text-align:center;"> 2020-03-19T16:31:02Z </td>
+   <td style="text-align:center;"> Quito habilita transporte para trabajadores de áreas estratégicas </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 5.58%">88</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> El Comercio (Ecuador) </td>
+   <td style="text-align:center;"> 2020-03-22T14:49:00Z </td>
+   <td style="text-align:center;"> María Paula Romo dice que habrá más restricciones en el Guayas </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 5.33%">84</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> La Hora (Ecuador) </td>
+   <td style="text-align:center;"> 2020-03-23T16:48:59Z </td>
+   <td style="text-align:center;"> Alcalde de Milagro dio positivo a Covid-19 </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 5.01%">79</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> expreso.ec </td>
+   <td style="text-align:center;"> 2020-03-24T23:29:51Z </td>
+   <td style="text-align:center;"> Coronavirus: La vicepresidenta del Consejo de Participación es otra víctima de la enfermedad </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 4.89%">77</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> El Universo </td>
+   <td style="text-align:center;"> 2020-03-20T15:00:09Z </td>
+   <td style="text-align:center;"> Alcalde de Quito dice que se adecúan locales que se destinarían a pacientes con síntomas leves de COVID-19 </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 4.82%">76</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> El Universo </td>
+   <td style="text-align:center;"> 2020-03-25T16:27:24Z </td>
+   <td style="text-align:center;"> Fundación Malecón 2000 suspende cobro de alícuotas en locales comerciales y parqueos </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 4.82%">76</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Metro Ecuador </td>
+   <td style="text-align:center;"> 2020-03-19T17:55:00Z </td>
+   <td style="text-align:center;"> Cynthia Viteri fue visitada por la policía y confirmó que su esposo tiene coronavirus </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 4.82%">76</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> El Universo </td>
+   <td style="text-align:center;"> 2020-03-19T15:36:28Z </td>
+   <td style="text-align:center;"> Alcaldesa de Guayaquil, Cynthia Viteri, anuncia que está contagiada con coronavirus </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 4.57%">72</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> El Universo </td>
+   <td style="text-align:center;"> 2020-03-25T22:17:37Z </td>
+   <td style="text-align:center;"> Este viernes 12 horas durará virtual maratón de radio en Quito, Alcaldía espera donaciones de víveres </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 4.31%">68</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Primicias </td>
+   <td style="text-align:center;"> 2020-03-26T05:05:24Z </td>
+   <td style="text-align:center;"> Profesionales ofrecen asistencia virtual durante la emergencia </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 4.00%">63</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> La Hora (Ecuador) </td>
+   <td style="text-align:center;"> 2020-03-23T23:29:51Z </td>
+   <td style="text-align:center;"> Se analiza que el edificio de Unasur albergue a pacientes contagiados por Covid-19 </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 3.55%">56</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> El Universo </td>
+   <td style="text-align:center;"> 2020-03-21T16:17:29Z </td>
+   <td style="text-align:center;"> En Quito, Vírgen de El Panecillo se ilumina como mensaje de esperanza </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 3.30%">52</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> El Diario Ecuador </td>
+   <td style="text-align:center;"> 2020-03-25T17:23:00Z </td>
+   <td style="text-align:center;"> Alcalde de Samborondón anuncia que dio positivo en coronavirus Covid-19 </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 3.17%">50</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Primicias </td>
+   <td style="text-align:center;"> 2020-03-23T18:04:11Z </td>
+   <td style="text-align:center;"> Coronavirus en Ecuador: funcionarios públicos también resultan afectados </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 2.60%">41</span> </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Teleamazonas </td>
+   <td style="text-align:center;"> 2020-03-23T18:58:00Z </td>
+   <td style="text-align:center;"> Desde mañana rige la calendarización de compras de acuerdo al número de cédula </td>
+   <td style="text-align:center;"> <span style="display: inline-block; direction: rtl; border-radius: 4px; padding-right: 2px; background-color: cyan; width: 1.78%">28</span> </td>
+  </tr>
+</tbody>
+</table>
+</body>
+</html>

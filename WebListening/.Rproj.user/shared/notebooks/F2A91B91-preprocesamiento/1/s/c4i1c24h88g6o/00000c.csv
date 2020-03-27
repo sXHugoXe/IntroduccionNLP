@@ -1,0 +1,4 @@
+"0",""
+"0","tidy_NoticiasDF %>% "
+"0","  inner_join(NoticiasDF[c(""titular"",""Fecha"",""Diario"")], by=""titular"") -> tidy_NoticiasDF"
+"0","save(""NoticiasDF"",""tidy_NoticiasDF"",file = ""NoticiasDF_udpipe_lema.RData"")"

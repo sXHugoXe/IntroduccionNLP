@@ -1,0 +1,28 @@
+---
+output:
+  html_document:
+    css: Estilos.css
+---
+
+<center> <h1> <b> Introducción ligera </b> </h1> </center>
+
+<center><img src="figs/0_Venn.png"></center>
+
+<center> <h1> <b> El valor en el negocio </b> </h1> </center>
+
+<center><img src="figs/0_BusinessValue.png"></center>
+
++ Marketing, prospección y predicción.
+
+<center> <h1> <b> Aprendizaje en NLP </b> </h1> </center>
+
+<center><img src="figs/0_retroalimentacion.png"></center>
+
++ Funcionamiento de chatbots
+
+<center> <h1> <b> Un ejemplo de aplicación </b> </h1> </center>
+
+<center><img src="figs/0_CrystalGamma.png"></center>
+
++ Link de referencia: [BCG GAMMA Blog](https://medium.com/bcggamma/using-deep-learning-to-predict-not-just-what-but-when-fae6515acb1b)
+

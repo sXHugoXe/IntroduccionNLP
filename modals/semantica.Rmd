@@ -1,0 +1,22 @@
+---
+output:
+  html_document:
+    css: Estilos.css
+---
+
+<center> <h1> <b> ¿Qué es la semántica? </b> </h1> </center>
+
+<center> Es el estudio del significado en el lenguaje, las relaciones entre palabras, frases y símbolos; así como el conocimiento que representan.
+
+...</center>
+
+<center><img src="figs/6_Semantica.png"></center>
+
+<center> <h1> <b> Redes Semánticas </b> </h1> </center>
+
+<center><img src="figs/6_RedSemantica.png"></center>
+
+<center> <h1> <b> Lógica de primer orden </b> </h1> </center>
+
+<center><img src="figs/6_FOLEjemplo.png"></center>
+

@@ -1,0 +1,5 @@
+"0","library(tidyverse) # Manejo y carga de datos en formato tidy"
+"0","library(tidytext) # Manejo de texto en formato tidy"
+"0","library(tm) # Procesamiento de texto"
+"0","library(readxl) # Lectura de archivos excel"
+"0","library(udpipe) # Modelos diseñados para lematización"

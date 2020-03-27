@@ -1,0 +1,29 @@
+---
+output:
+  html_document:
+    css: Estilos.css
+---
+
+<center> <h1> <b> ¿Qué es un lenguaje natural? </b> </h1> </center>
+
+<center> Es un lenguaje desarrollado y evolucionado por los humanos a través del uso y comunicación "natural" (distinto a un lenguaje de programación). Tal lenguaje puede ser expresado de manera escrita, verbal o incluso mediante señas. </center>
+
+<center><img src="figs/1_NL.jpg"></center>
+
+<center> <h1> <b> Cuatro problemas filosóficos </b> </h1> </center>
+
+## Pb1. La naturaleza del significado en el lenguaje
+
+<center><img src="figs/1_NaturalezaSignificado.jpg"></center>
+
+## Pb2. El uso del lenguaje
+
+<center><img src="figs/1_Acto.jpg"></center>
+
+## Pb3. La cognición del lenguaje
+
+<center><img src="figs/1_Cognicion.jpg"></center>
+
+## Pb4. La relación entre el lenguaje y la realidad
+
+<center><img src="figs/1_DirectionOfFit.png"></center>

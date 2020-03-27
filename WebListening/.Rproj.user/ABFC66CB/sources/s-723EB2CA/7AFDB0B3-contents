@@ -1,0 +1,104 @@
+#### Práctica ####
+
+remove(list = ls(all.names = T))
+load("noticiasDF.RData")
+
+#### Librerías ####
+library(tidyverse)
+library(tidytext)
+library(RColorBrewer)
+library(kableExtra)
+library(formattable)
+library(readxl)
+library(stopwords)
+library(scales)
+library(udpipe)
+library(tm)
+library(gridExtra)
+library(wordcloud2)
+library(topicmodels)
+library(ggrepel)
+
+# **Eliminación de stopwords**
+
+noticiasYundaDF$Acerca = "Jorge Yunda"
+noticiasViteriDF$Acerca = "Cynthia Viteri"
+NoticiasDF = rbind.data.frame(noticiasViteriDF, noticiasYundaDF)
+NoticiasDF$noticia = NoticiasDF$Noticia
+NoticiasDF$titular = NoticiasDF$Titular
+NoticiasDF = NoticiasDF[!is.na(NoticiasDF$Noticia),]
+
+NoticiasDF$noticiaLimpia = removePunctuation(NoticiasDF$noticia)
+NoticiasDF$noticiaLimpia = removeNumbers(NoticiasDF$noticiaLimpia)
+NoticiasDF$noticiaLimpia = tolower(NoticiasDF$noticiaLimpia)
+
+stopwords_es_1 = read_excel("CustomStopWords.xlsx")
+stopwords_es_2 = tibble(Palabra=tm::stopwords(kind = "es"), Fuente="tm")
+stopwords_es_3 = tibble(Palabra=stopwords::stopwords(language = "es", source = "stopwords-iso")
+                        , Fuente="stopwords-iso")
+stopwords_es_4 = tibble(Palabra=stopwords::stopwords(language = "es", source = "snowball")
+                        , Fuente="snowball")
+stopwords_es = rbind(stopwords_es_1, stopwords_es_2, stopwords_es_3, stopwords_es_4)
+stopwords_es = stopwords_es[!duplicated(stopwords_es$Palabra),]
+remove(stopwords_es_1, stopwords_es_2, stopwords_es_3, stopwords_es_4)
+
+stopwords_es[sample(nrow(stopwords_es),size = 10, replace = F),]
+
+NoticiasDF$noticiaLimpia = removeWords(NoticiasDF$noticiaLimpia, words = stopwords_es$Palabra)
+NoticiasDF$noticiaLimpia = str_squish(NoticiasDF$noticiaLimpia)
+
+str(NoticiasDF$noticiaLimpia[NoticiasDF$titular=="COE cantonal analiza abrir una edificación para cuarentena de contagiados y repatriados"], nchar.max = 500)
+str(NoticiasDF$noticiaLimpia[NoticiasDF$titular=="Siete rutas especiales en Guayaquil para quienes requieran trasladarse a hospitales"], nchar.max = 500)
+
+# **Lematización**
+
+model <- udpipe_load_model(file = "udpipe model spanish/spanish-gsd-ud-2.4-190531.udpipe")
+udpipe_lema <- udpipe_annotate(model, x = NoticiasDF$noticia, doc_id = NoticiasDF$titular)
+udpipe_lema <- as_tibble(udpipe_lema)
+
+udpipe_lema %>%
+  unnest_tokens(output = Palabra, input = token) %>% 
+  anti_join(stopwords_es) -> udpipe_lema
+
+udpipe_lema[udpipe_lema$Palabra=="decidió",c("Palabra","lemma")]
+udpipe_lema[udpipe_lema$Palabra=="trabajando",c("Palabra","lemma")]
+udpipe_lema[udpipe_lema$Palabra=="únicas",c("Palabra","lemma")]
+```
+
+# **Tokenización**
+
+```{r tokenizacion}
+# Tokenización por palabras
+tidy_NoticiasDF <- NoticiasDF %>%
+  unnest_tokens(output = Palabra,input = noticiaLimpia)
+
+# Tokenización por n-gramas
+tidy_NoticiasDF_ngram3 <- NoticiasDF %>%
+  unnest_tokens(output = Palabra,input = noticiaLimpia, token = "ngrams", n = 3)
+
+# La función se encarga de descartar puntuación y caracteres especiales, todo en minúsculas
+head(tidy_NoticiasDF$Palabra[tidy_NoticiasDF$titular=="Nerviosismo en la frontera por el coronavirus"], n = 20)
+
+head(tidy_NoticiasDF_ngram3$Palabra[tidy_NoticiasDF_ngram3$titular=="Nerviosismo en la frontera por el coronavirus"], n = 20)
+
+# Tokenización final a partir del DF lematizado
+tidy_NoticiasDF = udpipe_lema %>% 
+  filter(!is.na(lemma)) %>% 
+  unnest_tokens(output = Palabra, input = Palabra)
+
+names(tidy_NoticiasDF)[which(names(tidy_NoticiasDF)=="doc_id")] = "titular"
+head(tidy_NoticiasDF$lemma[tidy_NoticiasDF$titular=="Nerviosismo en la frontera por el coronavirus"], n = 20)
+
+```
+
+# **Stemming**
+
+```{r stemming}
+tidy_NoticiasDF$Stem = stemDocument(tidy_NoticiasDF$Palabra, language="spanish")
+tidy_NoticiasDF[tidy_NoticiasDF$Palabra=="decidió",c("Palabra","lemma","Stem")]
+tidy_NoticiasDF[tidy_NoticiasDF$Palabra=="ecuatoriano",c("Palabra","lemma","Stem")]
+
+tidy_NoticiasDF %>% 
+  inner_join(NoticiasDF[c("titular","fecha","Diario")], by="titular") -> tidy_NoticiasDF
+save("NoticiasDF","tidy_NoticiasDF",file = "NoticiasDF_udpipe_lema.RData")
+```

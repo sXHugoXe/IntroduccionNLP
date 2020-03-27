@@ -1,0 +1,18 @@
+---
+output:
+  html_document:
+    css: Estilos.css
+---
+
+<center> <h1> <b> Adquisición del lenguaje </b> </h1> </center>
+
+<center><img src="figs/2_Adquisicion.jpeg"></center>
+
++ Algunas teorías: Dios, Platón, B. Skinner, N. Chomsky.
+
+<center> <h1> <b> Uso del lenguaje </b> </h1> </center>
+
+<center><img src="figs/2_UsoLenguaje.jpg"></center>
+
++ 3 categorías de actos del habla: Locutiva, ilocutiva y perlocutiva.
++ 5 tipos de actos ilocutivos: asertivo, directivo, comisivo, expresivo y declarativo.

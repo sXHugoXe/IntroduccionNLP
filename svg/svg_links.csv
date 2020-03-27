@@ -1,0 +1,15 @@
+﻿svg,id,title,link,not_modal
+cinms_pelagic.svg,motivacion,Motivación,modals/motivacion.html,
+cinms_pelagic.svg,pbsfilosoficos,Problemas Filosóficos,modals/pbsfilosoficos.html,
+cinms_pelagic.svg,usoadq,Uso y adquirencia del lenguaje,modals/usoadquirencia.html,
+cinms_pelagic.svg,linguistica,Lingüística,modals/linguistica.html,
+cinms_pelagic.svg,sintaxis,Sintaxis,modals/sintaxis.html,
+cinms_pelagic.svg,gramatica,Gramática,modals/gramatica.html,
+cinms_pelagic.svg,semantica,Semántica,modals/semantica.html,
+cinms_pelagic.svg,nlp,NLP,modals/nlp_usos.html,
+cinms_pelagic.svg,preprocesamiento,Preprocesamiento de datos de texto,modals/preprocesamiento.html,
+cinms_pelagic.svg,nubeseda,Nubes de palabras y EDA,modals/eda_nubes.html,
+cinms_pelagic.svg,sentimientos,Análisis de sentimientos y otras técnicas,modals/sentimientos.html,
+cinms_pelagic.svg,topic,Modelamiento de tópicos,modals/topics.html,
+cinms_pelagic.svg,BERT,Google BERT,modals/BERT.html,
+

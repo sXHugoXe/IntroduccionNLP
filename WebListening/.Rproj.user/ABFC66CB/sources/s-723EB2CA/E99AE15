@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1585264559324.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2552616359",
+    "id" : "E99AE15",
+    "lastKnownWriteTime" : 1585266850,
+    "last_content_update" : 1585266850589,
+    "path" : "D:/OneDrive/Documentos/Profesional/CONFERENCIAS/ProcesamientoLenguajeNatural/modals/preprocesamiento.Rmd",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "79,40",
+        "scrollLine" : "65"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

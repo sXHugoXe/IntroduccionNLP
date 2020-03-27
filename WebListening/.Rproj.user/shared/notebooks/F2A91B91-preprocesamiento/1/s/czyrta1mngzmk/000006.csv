@@ -1,0 +1,7 @@
+"0","noticiasYundaDF$Acerca = ""Jorge Yunda"""
+"0","noticiasViteriDF$Acerca = ""Cynthia Viteri"""
+"0","NoticiasDF = rbind.data.frame(noticiasViteriDF, noticiasYundaDF)"
+"0","NoticiasDF$noticia = NoticiasDF$Noticia"
+"0","NoticiasDF$titular = NoticiasDF$Titular"
+"0","NoticiasDF = NoticiasDF[!is.na(NoticiasDF$Noticia),]"
+"0","head(NoticiasDF)"

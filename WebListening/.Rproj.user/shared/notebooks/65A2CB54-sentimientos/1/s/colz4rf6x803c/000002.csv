@@ -1,0 +1,3 @@
+"0","tidy_NoticiasDF %>%"
+"0","  count(lemma, Diario, sort = TRUE) -> conteos_lemas"
+"0","head(conteos_lemas)"

@@ -1,0 +1,13 @@
+---
+output:
+  html_document:
+    css: Estilos.css
+---
+
+<center> <h1> <b> Lingüística </b> </h1> </center>
+
+<center><img src="figs/3_Linguistica.jpg"></center>
+
+<center> <h1> <b> Morfología </b> </h1> </center>
+
+<center><img src="figs/3_Morfologia.png"></center>

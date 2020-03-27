@@ -1,0 +1,42 @@
+---
+output:
+  html_document:
+    css: Estilos.css
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
+knitr::opts_chunk$set(message = FALSE)
+options(knitr.kable.NA = '')
+library(readxl)
+library(dplyr)
+library(kableExtra)
+```
+
+<center> <h1> <b> ¿Qué es la gramática? </b> </h1> </center>
+
+<center> Consiste en un conjunto de reglas usadas para determinar cómo posicionar palabras, frases y cláusulas al momento de construir oraciones para cualquier lenguaje natural. Ayuda a habilitar tanto la sintaxis como la estructura en el lenguaje. 
+
+...</center>
+
+<center><img src="figs/5_Gramatica.png"></center>
+
+<center> <h1> <b> Modelos gramaticales </b> </h1> </center>
+
++ No se limita al lenguaje escrito
++ Opera también verbalmente.
++ Sus reglas pueden ser específicas a una región, lenguaje o dialecto.
++ Pueden también ser algo universales como el modelo sujeto-verbo-objeto (SVO).
++ Su evolución se basa en el uso del lenguaje a través del tiempo.
+
+<center>...</center>
+
+```{r warning=FALSE, message=FALSE}
+TipologiaOrdenPalabras=read_excel("TablasTeoria.xlsx", sheet = "TipologiaOrdenPalabras")
+kable(TipologiaOrdenPalabras, align = "c") %>%
+  kable_styling(bootstrap_options = c("bordered")
+                , full_width = F, position = "center") %>% 
+  row_spec(0:nrow(TipologiaOrdenPalabras), background = "beige", color = "black") %>% 
+  column_spec(1:ncol(TipologiaOrdenPalabras), border_left = T, border_right = T)
+```

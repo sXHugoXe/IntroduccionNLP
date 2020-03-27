@@ -1,0 +1,5 @@
+"0","LDA_Result_tidy <- tidy(LDA_Result, matrix = ""beta"")"
+"0","LDA_Result_tidy %>%"
+"0","  mutate(topic = paste0(""topic"", topic)) %>%"
+"0","  spread(topic, beta) %>% "
+"0","  arrange(desc(topic1))"

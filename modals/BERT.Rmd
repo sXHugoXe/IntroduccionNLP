@@ -1,0 +1,26 @@
+---
+output:
+  html_document:
+    css: Estilos.css
+---
+
+<center><img src="figs/10_BERT.png"></center>
+
++ Bidirectional Encoder Representations from Transformers (BERT). Red neuronal de código abierto que puede ser entrenada para procesar el lenguaje natural.
+
++ "...Nuestro trabajo es descifrar qué es lo que quieres buscar en la red, sin importar cómo lo escribas o cómo combines la palabras en el teclado", Pandu Nayak, VP.
+
++ Procesa las palabras en el contexto de una oración, en lugar de palabra por palabra.
+
++ **En la búsqueda "2019 turista brasileño a EE.UU. necesita visa", la preposición "a" es fundamental. Pero antes de BERT, era totalmente ignorada por el buscador, por lo que los resultados terminaban "entendiendo" que podía tratarse de alguien de EE.UU. que necesitaba a visa para Brasil.**
+
++ En uso en búsquedas en inglés, pronto estará disponible para idiomas como coreano, hindi y portugués.
+
++ **"Las preposiciones y los pronombres han sido muy problemáticos históricamente para los buscadores, pero BERT ayuda bastante con esto. El contexto mejora debido a la naturaleza bidireccional del nuevo algoritmo".**
+
++ [Guía para usar BERT](https://www.inboundcycle.com/blog-de-inbound-marketing/google-bert-que-es-como-funciona#item-0)
+
+
+
+
+

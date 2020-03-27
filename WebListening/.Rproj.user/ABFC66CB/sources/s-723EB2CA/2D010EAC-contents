@@ -1,0 +1,10 @@
+---
+title: "Introducción al Procesamiento del Lenguaje Natural"
+params:
+  svg: "svg/cinms_pelagic.svg"
+  csv: "svg/svg_links.csv"
+---
+
+Bienvenidos al primer taller de introducción al Procesamiento del Lenguaje Natural de la Sociedad Ecuatoriana de Estadística.
+
+```{r svg, child = '_svg-html_child.Rmd'}

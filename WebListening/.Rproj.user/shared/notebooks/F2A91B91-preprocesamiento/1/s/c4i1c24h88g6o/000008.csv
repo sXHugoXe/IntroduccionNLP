@@ -1,0 +1,2 @@
+"0","tidy_NoticiasDF$Stem = stemDocument(tidy_NoticiasDF$Palabra, language=""spanish"")"
+"0","tidy_NoticiasDF[tidy_NoticiasDF$Palabra==""decidió"",c(""Palabra"",""lemma"",""Stem"")]"

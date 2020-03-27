@@ -1,0 +1,6 @@
+"0","#### Nube de palabras ####"
+"0",""
+"0","tidy_NoticiasDF %>%"
+"0","  count(lemma, sort = TRUE) -> conteos_lemas"
+"0",""
+"0","wordcloud2(conteos_lemas, minSize = 10, size = .5)"

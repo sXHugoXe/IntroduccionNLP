@@ -1,0 +1,2 @@
+"0","NoticiasDF$noticiaLimpia = removeWords(NoticiasDF$noticiaLimpia, words = stopwords_es$Palabra)"
+"0","NoticiasDF$noticiaLimpia = str_squish(NoticiasDF$noticiaLimpia)"

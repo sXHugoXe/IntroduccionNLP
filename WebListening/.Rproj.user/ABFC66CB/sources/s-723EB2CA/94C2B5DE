@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1585265341005.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "94C2B5DE",
+    "lastKnownWriteTime" : 1585265940,
+    "last_content_update" : 1585265940596,
+    "path" : "D:/OneDrive/Documentos/Profesional/CONFERENCIAS/ProcesamientoLenguajeNatural/modals/eda_nubes.Rmd",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "45,70",
+        "scrollLine" : "25"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

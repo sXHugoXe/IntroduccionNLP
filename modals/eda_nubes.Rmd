@@ -1,0 +1,86 @@
+---
+output:
+  html_document:
+    css: Estilos.css
+---
+
+# **Carga de librerías**
+
+```{r carga_librerias, message=F, warning=F}
+library(tidyverse) # Manejo y carga de datos en formato tidy
+library(tidytext) # Manejo de texto en formato tidy
+library(tm) # Procesamiento de texto
+library(readxl) # Lectura de archivos excel
+library(RColorBrewer) # Paletas de colores
+library(kableExtra) # Formato de tablas
+library(formattable) # Formato de tablas
+library(wordcloud2) # Nubes de palabras
+```
+
+# **Análisis Exploratorio de los Datos (EDA)**
+
+```{r}
+load("NoticiasDF_udpipe_lema.RData")
+NoticiasDF$fecha = as.Date(NoticiasDF$Fecha)
+
+Colores = colorRampPalette(brewer.pal(8,"Dark2"))(n_distinct(NoticiasDF$fecha))
+NoticiasDF %>% 
+  group_by(fecha) %>% 
+  summarise(N = n_distinct(titular)) %>% 
+  ggplot()+
+  geom_col(aes(x = as.factor(fecha), y = N, fill = as.factor(fecha)))+
+  geom_text(aes(x = as.factor(fecha), y = N, label = N), vjust = -0.5, family = "serif")+
+  labs(x = "Fecha", y = "Número de noticias")+
+  ggtitle("Cronología - Noticias por día")+
+  scale_fill_manual(values = Colores)+
+  theme(legend.position = "none", axis.text.x = element_text(angle=90))
+
+NoticiasDF %>% 
+  group_by(Diario) %>% 
+  summarise(N = n_distinct(titular)) %>% 
+  ggplot()+
+  geom_col(aes(x = as.factor(Diario), y = N, fill = as.factor(Diario)))+
+  geom_text(aes(x = as.factor(Diario), y = N, label = N), vjust = -0.5, family = "serif")+
+  labs(x = "Diario", y = "Número de noticias")+
+  ggtitle("Noticias por Diario")+
+  theme(legend.position = "none", axis.text.x = element_text(angle=90))
+
+NoticiasDF %>%
+  select("Fecha de publicación" = fecha
+         ,"Titular" = titular
+         ,"Diario" = Diario) %>%
+  arrange(`Fecha de publicación`) %>%
+  mutate(`Fecha de publicación` = color_tile("orange", "firebrick1")(`Fecha de publicación`)) %>%
+  kable("html", escape = F, align = "c"
+        , caption = "Algunas noticias acerca de Jorge Yunda y Cynthia Viteri"
+        , table.attr = "style = \"color: black;\"") %>%
+  kable_styling(bootstrap_options = c("striped", "condensed", "bordered"), 
+                full_width = T)
+```
+
+```{r}
+# En este conteo se incluyen palabras repetidas
+tidy_NoticiasDF %>% 
+  group_by(Diario, Fecha, titular) %>% 
+  summarise(NumeroPalabras=n()) %>% 
+  arrange(desc(NumeroPalabras)) -> extension_historias
+
+extension_historias %>%
+  ungroup(NumeroPalabras, titular, Fecha) %>%
+  mutate(NumeroPalabras = color_bar("cyan")(NumeroPalabras)) %>%
+  kable("html", escape = F, align = "c", caption = "Noticias según su conteo de palabras"
+        , table.attr = "style = \"color: black;\"") %>%
+  kable_styling(bootstrap_options = c("striped", "condensed", "bordered"), 
+                full_width = T)
+```
+
+# **Nubes de palabras**
+
+```{r}
+#### Nube de palabras ####
+
+tidy_NoticiasDF %>%
+  count(lemma, sort = TRUE) -> conteos_lemas
+
+wordcloud2(conteos_lemas, minSize = 10, size = .5)
+```
